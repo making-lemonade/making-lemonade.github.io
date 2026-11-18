@@ -27,9 +27,9 @@
     .brand-name{display:block;font-size:15px;line-height:1.15}
     .brand-sub{display:block;margin-top:4px;font-size:11px;font-weight:550;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
     .nav{display:flex;align-items:center;gap:28px;font-size:13px;color:#d4dce6}
-    .nav a:not(.donate-small):hover{color:var(--accent)}
-    .donate-small{display:inline-flex;align-items:center;gap:9px;padding:10px 16px;border:1px solid rgba(179,241,215,.38);border-radius:999px;background:rgba(179,241,215,.09);color:#d6ffe9;font-weight:700;white-space:nowrap;transition:background .2s}
-    .donate-small:hover{background:rgba(179,241,215,.19)}
+    .nav a:not(.coffee-top):hover{color:var(--accent)}
+    .coffee-top{display:inline-flex;align-items:center;gap:9px;padding:10px 16px;border:1px solid rgba(255,221,0,.55);border-radius:999px;background:#ffdd00;color:#211a07;font-weight:750;white-space:nowrap;transition:background .2s}
+    .coffee-top:hover{background:#ffe872;color:#211a07}
     .hero{padding:96px 0 101px;position:relative}
     .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(290px,.7fr);gap:52px;align-items:center}
     .eyebrow{display:inline-flex;align-items:center;gap:12px;color:var(--accent);font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:800}
@@ -104,8 +104,6 @@
     .support h2{font-size:clamp(29px,4vw,45px);line-height:1.16;letter-spacing:-.045em;margin:14px 0}
     .support p{color:#b9cbd2;font-size:15px;line-height:1.8;max-width:640px;margin-bottom:0}
     .support-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end;min-width:260px}
-    .paypal{background:#d4e8ff;color:#142b51}
-    .paypal:hover{background:white}
     .coffee{color:#241e0c;background:var(--yellow)}
     .coffee:hover{background:#ffe8a9}
     .footer-inner{padding:33px 0 38px;display:flex;gap:24px;align-items:center;justify-content:space-between}
@@ -113,15 +111,15 @@
     .footer-links{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
     .footer-links a{font-size:12px;color:#b6c7d0}
     .footer-links a:hover{color:white}
-    .footer-links .paypal-footer{color:var(--accent);font-weight:800}
+    .footer-links .coffee-footer{color:var(--accent);font-weight:800}
     @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero{padding:72px 0}.hero-aside{min-height:230px}.hero-orbit{margin-top:24px}.project{grid-template-columns:1fr}.project-copy{padding:30px 30px 20px}.project-visual{min-height:270px}.about-layout{gap:25px}.support-inner{align-items:flex-start;flex-direction:column}.support-actions{justify-content:flex-start}}
-    @media(max-width:620px){.container{width:min(100% - 32px,1120px)}.header-inner{min-height:73px}.brand-sub{font-size:10px}.nav{gap:10px}.nav .nav-internal{display:none}.donate-small{padding:9px 12px;font-size:12px}.hero{padding:59px 0 66px}.hero-grid{gap:30px}.hero-aside{min-height:230px}.lede{font-size:16px}.section{padding:54px 0}.section-header{display:block}.section-note{margin-top:14px}.project h3{font-size:30px}.project-visual{min-height:255px}.about-layout{grid-template-columns:1fr}.support-actions{min-width:0}.footer-inner{flex-direction:column;align-items:flex-start;gap:17px}}
+    @media(max-width:620px){.container{width:min(100% - 32px,1120px)}.header-inner{min-height:73px}.brand-sub{font-size:10px}.nav{gap:10px}.nav .nav-internal{display:none}.coffee-top{padding:9px 12px;font-size:12px}.hero{padding:59px 0 66px}.hero-grid{gap:30px}.hero-aside{min-height:230px}.lede{font-size:16px}.section{padding:54px 0}.section-header{display:block}.section-note{margin-top:14px}.project h3{font-size:30px}.project-visual{min-height:255px}.about-layout{grid-template-columns:1fr}.support-actions{min-width:0}.footer-inner{flex-direction:column;align-items:flex-start;gap:17px}}
     .language-switch{display:inline-flex;align-items:center;gap:3px;padding:4px;border:1px solid rgba(205,230,225,.24);border-radius:999px;background:rgba(255,255,255,.04);flex-shrink:0}
     .language-button{border:0;border-radius:999px;min-width:39px;height:30px;padding:0 9px;background:transparent;color:#bdcad4;font:750 12px/1 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;cursor:pointer;transition:background .16s,color .16s}
     .language-button:hover{color:white}
     .language-button.is-active{background:var(--accent);color:#10231f;cursor:default}
     .language-button:focus-visible{outline:2px solid white;outline-offset:2px}
-    @media(max-width:620px){.header-inner{flex-wrap:wrap;padding-block:11px;gap:12px}.brand{flex:1}.nav{width:100%;justify-content:space-between}.nav .language-switch{order:0}.nav .donate-small{order:1}.language-button{min-width:45px}}
+    @media(max-width:620px){.header-inner{flex-wrap:wrap;padding-block:11px;gap:12px}.brand{flex:1}.nav{width:100%;justify-content:space-between}.nav .language-switch{order:0}.nav .coffee-top{order:1}.language-button{min-width:45px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
   </style>
 </head>
@@ -136,7 +134,7 @@
         <div class="language-switch" role="group" aria-label="Seleziona la lingua"><button type="button" class="language-button is-active" data-lang="it" aria-pressed="true" lang="it" title="Italiano">IT</button><button type="button" class="language-button" data-lang="en" aria-pressed="false" lang="en" title="English">EN</button></div>
         <a class="nav-internal" href="#progetti">Progetti</a>
         <a class="nav-internal" href="#chi-sono">Chi sono</a>
-        <a class="donate-small" href="https://www.paypal.me/dvaidae" target="_blank" rel="noopener noreferrer" aria-label="Supporta i progetti con PayPal (apre una nuova scheda)">&#9829; &nbsp;Supporta su PayPal ↗</a>
+        <a class="coffee-top" href="https://www.buymeacoffee.com/dvaidae" target="_blank" rel="noopener noreferrer" aria-label="Supporta i progetti tramite Buy Me a Coffee (apre una nuova scheda)">Buy me a coffee ↗</a>
       </nav>
     </div>
   </header>
@@ -250,7 +248,6 @@
           <p>Se uno di questi strumenti ti è utile, puoi sostenere il lavoro che c’è dietro. Non è necessario: anche provarli, condividerli o lasciare un feedback significa molto.</p>
         </div>
         <div class="support-actions">
-          <a class="button paypal" href="https://www.paypal.me/dvaidae" target="_blank" rel="noopener noreferrer">Dona con PayPal ↗</a>
           <a class="button coffee" href="https://www.buymeacoffee.com/dvaidae" target="_blank" rel="noopener noreferrer">Buy me a coffee ↗</a>
         </div>
       </div>
@@ -263,7 +260,7 @@
       <nav class="footer-links" aria-label="Collegamenti finali">
         <a href="#inizio">Torna su ↑</a>
         <a href="https://github.com/making-lemonade" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <a class="paypal-footer" href="https://www.paypal.me/dvaidae" target="_blank" rel="noopener noreferrer">Supporta con PayPal ↗</a>
+        <a class="coffee-footer" href="https://www.buymeacoffee.com/dvaidae" target="_blank" rel="noopener noreferrer">Buy me a coffee ↗</a>
       </nav>
     </div>
   </footer>
@@ -273,17 +270,16 @@
     const translations = {
   "Progetti": "Projects",
   "Chi sono": "About me",
-  "♥ Supporta su PayPal ↗": "♥ Support on PayPal ↗",
   "Portfolio personale": "Personal portfolio",
-  "Mi piace capire.": "I like to understand.",
-  "Poi costruire.": "Then build.",
-  "Sperimento con il software, i dati e le nuove tecnologie. Parto da un problema concreto e provo a trasformarlo in qualcosa che si possa davvero usare.": "I experiment with software, data and new technologies. I start with a real problem and try to turn it into something people can actually use.",
+  "Mi piace capire.": "I like figuring things out.",
+  "Poi costruire.": "Then I build something useful.",
+  "Sperimento con il software, i dati e le nuove tecnologie. Parto da un problema concreto e provo a trasformarlo in qualcosa che si possa davvero usare.": "I experiment with software, data and new technology. I usually start with a real problem and see what I can build to solve it.",
   "Esplora i progetti": "Explore projects",
   "Il mio GitHub": "My GitHub",
   "Curiosità, test, miglioramenti": "Curiosity, testing, improvements",
   "Idee piccole.": "Small ideas.",
   "Problemi veri.": "Real problems.",
-  "Due progetti indipendenti, nati dalla voglia di imparare facendo e di rendere più accessibili strumenti e informazioni.": "Two independent projects, born from a desire to learn by doing and make tools and information more accessible.",
+  "Due progetti indipendenti, nati dalla voglia di imparare facendo e di rendere più accessibili strumenti e informazioni.": "Two independent projects that started with curiosity and grew through trial and error, with the goal of making useful tools and information easier to access.",
   "Progetti in evidenza": "Featured projects",
   "Due applicazioni diverse, unite dalla stessa idea: la tecnologia è interessante quando diventa utile.": "Two different applications, united by one idea: technology is interesting when it becomes useful.",
   "Un archivio personale per referti medici e risultati di laboratorio. Puoi conservare i PDF, organizzare i documenti per persona e seguire i valori nel tempo. È una PWA installabile, progettata per tenere i dati sul tuo dispositivo in un archivio cifrato.": "A personal archive for medical reports and laboratory results. Store PDFs, organize documents for different people and track values over time. It's an installable PWA designed to keep data on your device in an encrypted archive.",
@@ -320,15 +316,13 @@
   "Supporta i progetti": "Support the projects",
   "Un piccolo aiuto fa strada.": "A little support goes a long way.",
   "Se uno di questi strumenti ti è utile, puoi sostenere il lavoro che c’è dietro. Non è necessario: anche provarli, condividerli o lasciare un feedback significa molto.": "If one of these tools is useful to you, you can support the work behind it. There's no obligation: trying them, sharing them or leaving feedback means a lot too.",
-  "Dona con PayPal ↗": "Donate with PayPal ↗",
   "Dettagli tecnici e limiti dei progetti: consulta le rispettive documentazioni su GitHub.": "For technical details and limitations, see each project's documentation on GitHub.",
   "Torna su ↑": "Back to top ↑",
-  "Supporta con PayPal ↗": "Support via PayPal ↗"
 };
     const attributeTranslations = {
   "Davide, torna all'inizio": "Davide, back to top",
   "Navigazione principale": "Main navigation",
-  "Supporta i progetti con PayPal (apre una nuova scheda)": "Support the projects with PayPal (opens in a new tab)",
+  "Supporta i progetti tramite Buy Me a Coffee (apre una nuova scheda)": "Support the projects through Buy Me a Coffee (opens in a new tab)",
   "Il mio approccio": "My approach",
   "Tecnologie e caratteristiche": "Technologies and features",
   "Illustrazione di un archivio digitale di referti": "Illustration of a digital archive of medical reports",
@@ -390,6 +384,5 @@
     setLanguage("it");
   })();
   </script>
-  <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="dvaidae" data-color="#FFDD00" data-emoji="" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
-</body>
+  </body>
 </html>
