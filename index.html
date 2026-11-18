@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d1420">
+  <meta name="description" content="Il portfolio personale di Davide: Riferto e Acqua Analisi, due progetti indipendenti tra web app, privacy, open data e visualizzazione.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Davide — Progetti personali">
+  <meta property="og:description" content="Mi piace costruire cose, sperimentare e capire come la tecnologia possa far funzionare meglio le cose.">
+  <meta property="og:url" content="https://making-lemonade.github.io/">
+  <link rel="canonical" href="https://making-lemonade.github.io/">
+  <title>Davide — Progetti personali</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0d1420;--text:#f2f5f6;--muted:#a7b4c3;--line:rgba(201,222,233,.15);--accent:#b3f1d7;--yellow:#ffdc84;--surface:#152130}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+    body::before{content:"";position:absolute;z-index:-1;top:0;left:0;width:100%;height:690px;pointer-events:none;background:radial-gradient(ellipse at 82% 16%,rgba(75,162,144,.22),transparent 43%),radial-gradient(ellipse at 24% -14%,rgba(101,127,218,.15),transparent 55%)}
+    a{color:inherit;text-decoration:none}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+    .container{width:min(1120px,calc(100% - 44px));margin-inline:auto}
+    .site-header{position:relative;z-index:10;border-bottom:1px solid var(--line);background:rgba(13,20,32,.78);backdrop-filter:blur(16px)}
+    .header-inner{min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:13px;font-weight:750;letter-spacing:-.025em}
+    .brandmark{width:37px;height:37px;display:grid;place-items:center;border-radius:12px;background:#b3f1d7;color:#101c1d;font-weight:850;font-size:16px;letter-spacing:-.08em}
+    .brand-name{display:block;font-size:15px;line-height:1.15}
+    .brand-sub{display:block;margin-top:4px;font-size:11px;font-weight:550;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .nav{display:flex;align-items:center;gap:28px;font-size:13px;color:#d4dce6}
+    .nav a:not(.donate-small):hover{color:var(--accent)}
+    .donate-small{display:inline-flex;align-items:center;gap:9px;padding:10px 16px;border:1px solid rgba(179,241,215,.38);border-radius:999px;background:rgba(179,241,215,.09);color:#d6ffe9;font-weight:700;white-space:nowrap;transition:background .2s}
+    .donate-small:hover{background:rgba(179,241,215,.19)}
+    .hero{padding:96px 0 101px;position:relative}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(290px,.7fr);gap:52px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:12px;color:var(--accent);font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:800}
+    .eyebrow::before{content:"";width:26px;height:1px;background:currentColor}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(46px,6.4vw,83px);line-height:1.065;letter-spacing:-.065em;font-weight:750;max-width:830px;margin:24px 0}
+    h1 em{font-style:normal;color:var(--accent)}
+    .lede{max-width:590px;color:#b9c5d2;font-size:18px;line-height:1.8}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:33px}
+    .button{display:inline-flex;justify-content:center;align-items:center;gap:11px;padding:14px 19px;border-radius:12px;font-size:14px;line-height:1.2;font-weight:750;transition:transform .18s,background .18s,border-color .18s;border:1px solid transparent}
+    .button:hover{transform:translateY(-2px)}
+    .button-primary{background:var(--accent);color:#10231f}
+    .button-primary:hover{background:#d4ffe9}
+    .button-secondary{border-color:rgba(207,226,235,.24);background:rgba(255,255,255,.04)}
+    .button-secondary:hover{background:rgba(255,255,255,.09)}
+    .hero-aside{position:relative;border:1px solid rgba(196,224,220,.17);background:linear-gradient(145deg,rgba(41,77,86,.64),rgba(26,39,58,.62));min-height:323px;border-radius:28px;padding:28px;overflow:hidden}
+    .hero-aside::before{content:"";position:absolute;width:290px;height:290px;right:-93px;top:-114px;border:1px solid rgba(179,241,215,.28);border-radius:50%;box-shadow:0 0 0 38px rgba(179,241,215,.04),0 0 0 80px rgba(179,241,215,.025)}
+    .hero-orbit{position:relative;z-index:1;margin-top:52px}
+    .hero-orbit strong{display:block;font-size:29px;letter-spacing:-.05em;line-height:1.2}
+    .hero-orbit p{color:#afc4cc;max-width:280px;font-size:14px;line-height:1.75;margin:16px 0 0}
+    .mini-label{font-size:11px;color:#a9c1c2;text-transform:uppercase;font-weight:800;letter-spacing:.17em}
+    .orbit-footer{position:absolute;bottom:27px;left:28px;font-size:11px;color:#a6bdbf;letter-spacing:.06em}
+    .section{padding:75px 0}
+    .section-border{border-top:1px solid var(--line)}
+    .section-header{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:30px}
+    .section-header h2{font-size:clamp(30px,4vw,47px);letter-spacing:-.048em;line-height:1.15;margin:13px 0 0}
+    .section-note{max-width:335px;color:var(--muted);font-size:14px;margin:0}
+    .project-list{display:grid;gap:24px}
+    .project{display:grid;grid-template-columns:1fr .92fr;gap:24px;overflow:hidden;border:1px solid var(--line);border-radius:25px;min-height:398px;background:linear-gradient(140deg,#182432,#111c2a)}
+    .project-copy{padding:39px 6px 36px 41px;display:flex;flex-direction:column;align-items:flex-start}
+    .project-meta{color:#83cfb8;text-transform:uppercase;font-size:11px;font-weight:850;letter-spacing:.14em}
+    .project h3{margin:15px 0 13px;font-size:clamp(27px,3.5vw,39px);letter-spacing:-.045em;line-height:1.2}
+    .project p{color:#b8c5d2;font-size:15px;line-height:1.78;max-width:510px;margin:0 0 17px}
+    .chips{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 25px}
+    .chips span{font-size:11px;color:#c6d4df;border:1px solid rgba(207,226,235,.17);border-radius:999px;padding:5px 10px;white-space:nowrap}
+    .project-links{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:auto}
+    .project-links a{font-size:13px;font-weight:800;color:var(--accent)}
+    .project-links a.secondary{color:#c1cbd5}
+    .project-links a:hover{text-decoration:underline;text-underline-offset:4px}
+    .project-visual{min-height:365px;display:grid;place-items:center;position:relative;overflow:hidden;padding:28px 27px}
+    .project-visual::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 55% 38%,rgba(91,162,171,.23),transparent 55%)}
+    .visual-riferto{background:linear-gradient(145deg,#123b42 0%,#101c2c 70%)}
+    .visual-acqua{background:linear-gradient(145deg,#17334a,#142237 67%)}
+    .preview-panel{position:relative;z-index:1;width:min(100%,370px);padding:19px;background:rgba(247,251,251,.96);color:#152530;border:1px solid rgba(255,255,255,.7);box-shadow:0 25px 74px rgba(0,0,0,.3);border-radius:18px;transform:rotate(-3deg)}
+    .preview-panel.acqua-panel{transform:rotate(3deg);width:min(100%,395px)}
+    .preview-header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:15px;border-bottom:1px solid #e0e8ed}
+    .preview-header strong{font-size:12px;font-weight:850;letter-spacing:-.02em}
+    .preview-pill{font-size:9px;color:#256351;background:#e3f5ed;padding:4px 7px;border-radius:20px;font-weight:800}
+    .record{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:11px;padding:13px;border:1px solid #e8eff2;border-radius:10px;background:white}
+    .record-left{display:flex;align-items:center;gap:9px}
+    .file-icon{width:26px;height:31px;display:grid;place-items:center;color:#2b6b80;border-radius:6px;background:#e8f4f7;font-size:14px}
+    .record strong{display:block;font-size:11px}
+    .record small{font-size:9px;color:#6b8190}
+    .record .pill{height:8px;width:40px;border-radius:10px;background:#dbeae7}
+    .spark{display:flex;gap:4px;align-items:end;height:49px;margin-top:17px;padding-inline:8px}
+    .spark span{flex:1;border-radius:3px 3px 0 0;background:#a1d9d4}
+    .spark span:nth-child(2n){background:#77b7c0}
+    .chart-grid{margin-top:13px;background:linear-gradient(to bottom,transparent 24%,#e2eaf0 25%,transparent 26%,transparent 49%,#e2eaf0 50%,transparent 51%,transparent 74%,#e2eaf0 75%,transparent 76%);border:1px solid #e8edf1;border-radius:9px;padding:12px}
+    .chart-grid svg{display:block;width:100%;height:100px}
+    .legend{display:flex;justify-content:space-between;color:#60788b;font-size:9px;margin-top:10px}
+    .legend span b{display:inline-block;vertical-align:middle;width:7px;height:7px;border-radius:50%;background:#2496a2;margin-right:4px}
+    .footnote{font-size:12px;color:#8da0b1;margin:12px 0 0!important}
+    .about-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.6fr);gap:68px;align-items:start}
+    .about-layout h2{font-size:clamp(33px,4.4vw,54px);letter-spacing:-.055em;line-height:1.15;margin:15px 0 22px}
+    .about-layout p{font-size:17px;color:#becbd7;line-height:1.9;max-width:640px}
+    .about-card{border:1px solid var(--line);padding:30px;border-radius:22px;background:linear-gradient(135deg,#1b2a38,#13202d)}
+    .about-card h3{font-size:17px;letter-spacing:-.02em}
+    .about-card p{font-size:14px;line-height:1.8;margin-bottom:22px}
+    .github-link{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:800;color:var(--accent)}
+    .support{background:linear-gradient(135deg,rgba(188,236,213,.11),rgba(84,124,155,.08));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .support-inner{display:flex;align-items:center;justify-content:space-between;gap:32px}
+    .support h2{font-size:clamp(29px,4vw,45px);line-height:1.16;letter-spacing:-.045em;margin:14px 0}
+    .support p{color:#b9cbd2;font-size:15px;line-height:1.8;max-width:640px;margin-bottom:0}
+    .support-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end;min-width:260px}
+    .paypal{background:#d4e8ff;color:#142b51}
+    .paypal:hover{background:white}
+    .coffee{color:#241e0c;background:var(--yellow)}
+    .coffee:hover{background:#ffe8a9}
+    .footer-inner{padding:33px 0 38px;display:flex;gap:24px;align-items:center;justify-content:space-between}
+    .footer-left{font-size:12px;color:#8ea0af;line-height:1.85}
+    .footer-links{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+    .footer-links a{font-size:12px;color:#b6c7d0}
+    .footer-links a:hover{color:white}
+    .footer-links .paypal-footer{color:var(--accent);font-weight:800}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero{padding:72px 0}.hero-aside{min-height:230px}.hero-orbit{margin-top:24px}.project{grid-template-columns:1fr}.project-copy{padding:30px 30px 20px}.project-visual{min-height:270px}.about-layout{gap:25px}.support-inner{align-items:flex-start;flex-direction:column}.support-actions{justify-content:flex-start}}
+    @media(max-width:620px){.container{width:min(100% - 32px,1120px)}.header-inner{min-height:73px}.brand-sub{font-size:10px}.nav{gap:10px}.nav .nav-internal{display:none}.donate-small{padding:9px 12px;font-size:12px}.hero{padding:59px 0 66px}.hero-grid{gap:30px}.hero-aside{min-height:230px}.lede{font-size:16px}.section{padding:54px 0}.section-header{display:block}.section-note{margin-top:14px}.project h3{font-size:30px}.project-visual{min-height:255px}.about-layout{grid-template-columns:1fr}.support-actions{min-width:0}.footer-inner{flex-direction:column;align-items:flex-start;gap:17px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inizio" aria-label="Davide, torna all'inizio">
+        <span class="brandmark" aria-hidden="true">d.</span>
+        <span><span class="brand-name">Davide</span><span class="brand-sub">making-lemonade / portfolio</span></span>
+      </a>
+      <nav class="nav" aria-label="Navigazione principale">
+        <a class="nav-internal" href="#progetti">Progetti</a>
+        <a class="nav-internal" href="#chi-sono">Chi sono</a>
+        <a class="donate-small" href="https://www.paypal.me/dvaidae" target="_blank" rel="noopener noreferrer" aria-label="Supporta i progetti con PayPal (apre una nuova scheda)">&#9829; &nbsp;Supporta su PayPal ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inizio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Portfolio personale</span>
+          <h1>Mi piace capire.<br><em>Poi costruire.</em></h1>
+          <p class="lede">Sperimento con il software, i dati e le nuove tecnologie. Parto da un problema concreto e provo a trasformarlo in qualcosa che si possa davvero usare.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#progetti">Esplora i progetti <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="https://github.com/making-lemonade" target="_blank" rel="noopener noreferrer">Il mio GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <aside class="hero-aside" aria-label="Il mio approccio">
+          <span class="mini-label">Curiosità, test, miglioramenti</span>
+          <div class="hero-orbit">
+            <strong>Idee piccole.<br>Problemi veri.</strong>
+            <p>Due progetti indipendenti, nati dalla voglia di imparare facendo e di rendere più accessibili strumenti e informazioni.</p>
+          </div>
+          <span class="orbit-footer">DAVIDE / PERSONAL BUILDS</span>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-border" id="progetti">
+      <div class="container">
+        <div class="section-header">
+          <div><span class="eyebrow">01 / 02</span><h2>Progetti in evidenza</h2></div>
+          <p class="section-note">Due applicazioni diverse, unite dalla stessa idea: la tecnologia è interessante quando diventa utile.</p>
+        </div>
+        <div class="project-list">
+          <article class="project">
+            <div class="project-copy">
+              <span class="project-meta">01 · Web app &amp; privacy</span>
+              <h3>Riferto</h3>
+              <p>Un archivio personale per referti medici e risultati di laboratorio. Puoi conservare i PDF, organizzare i documenti per persona e seguire i valori nel tempo. È una PWA installabile, progettata per tenere i dati sul tuo dispositivo in un archivio cifrato.</p>
+              <div class="chips" aria-label="Tecnologie e caratteristiche"><span>PWA</span><span>Local-first</span><span>AES-GCM</span><span>PDF &amp; trend</span></div>
+              <div class="project-links">
+                <a href="https://making-lemonade.github.io/riferto/" target="_blank" rel="noopener noreferrer">Apri Riferto ↗</a>
+                <a class="secondary" href="https://github.com/making-lemonade/riferto" target="_blank" rel="noopener noreferrer">Repository GitHub ↗</a>
+              </div>
+              <p class="footnote">Archivio personale, non dispositivo medico.</p>
+            </div>
+            <div class="project-visual visual-riferto" role="img" aria-label="Illustrazione di un archivio digitale di referti">
+              <div class="preview-panel" aria-hidden="true">
+                <div class="preview-header"><strong>Riferto / Archivio</strong><span class="preview-pill">Locale e privato</span></div>
+                <div class="record"><div class="record-left"><span class="file-icon">▤</span><div><strong>Referti</strong><small>Documenti e allegati PDF</small></div></div><span class="pill"></span></div>
+                <div class="record"><div class="record-left"><span class="file-icon">◫</span><div><strong>Valori nel tempo</strong><small>Storico e tendenze</small></div></div><span class="pill"></span></div>
+                <div class="spark"><span style="height:42%"></span><span style="height:71%"></span><span style="height:57%"></span><span style="height:84%"></span><span style="height:62%"></span><span style="height:89%"></span><span style="height:74%"></span><span style="height:95%"></span><span style="height:82%"></span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-copy">
+              <span class="project-meta">02 · Open data &amp; analisi</span>
+              <h3>Acqua Analisi<br><span style="color:#a8bccc;font-size:.56em;letter-spacing:-.015em">Aqua Intelligence</span></h3>
+              <p>Una dashboard per esplorare i dati pubblici sulla qualità dell’acqua nei comuni serviti da Gruppo CAP. Filtri per comune, periodo e parametro, grafici, mappe e analisi statistiche: dai file originali a una lettura più chiara e verificabile dei dati.</p>
+              <div class="chips" aria-label="Tecnologie e caratteristiche"><span>Python / ETL</span><span>React + TypeScript</span><span>Mappe</span><span>ML esplorativo</span></div>
+              <div class="project-links">
+                <a href="https://making-lemonade.github.io/cap-acqua-monitor/" target="_blank" rel="noopener noreferrer">Apri la dashboard ↗</a>
+                <a class="secondary" href="https://github.com/making-lemonade/cap-acqua-monitor" target="_blank" rel="noopener noreferrer">Repository GitHub ↗</a>
+              </div>
+              <p class="footnote">Progetto indipendente. Non certifica la potabilità e non è affiliato a Gruppo CAP.</p>
+            </div>
+            <div class="project-visual visual-acqua" role="img" aria-label="Illustrazione di una dashboard con grafico temporale di dati sull'acqua">
+              <div class="preview-panel acqua-panel" aria-hidden="true">
+                <div class="preview-header"><strong>Acqua / Dati aperti</strong><span class="preview-pill">Esplora</span></div>
+                <div class="legend"><span>Parametro selezionato</span><span>Serie storica</span></div>
+                <div class="chart-grid">
+                  <svg viewBox="0 0 310 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 76 L33 65 L66 71 L99 44 L132 56 L165 39 L198 48 L231 27 L264 38 L310 16 L310 100 L0 100 Z" fill="#d5eeee"></path>
+                    <path d="M0 76 L33 65 L66 71 L99 44 L132 56 L165 39 L198 48 L231 27 L264 38 L310 16" stroke="#2496a2" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+                    <circle cx="231" cy="27" r="5" fill="#2496a2" stroke="white" stroke-width="2"></circle>
+                  </svg>
+                </div>
+                <div class="legend"><span><b></b>Serie illustrativa</span><span>Comune · Periodo · Parametro</span></div>
+                <div class="record"><div class="record-left"><span class="file-icon">≋</span><div><strong>Dati e provenienza</strong><small>Fonti e trasformazioni consultabili</small></div></div><span class="pill"></span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-border" id="chi-sono">
+      <div class="container about-layout">
+        <div>
+          <span class="eyebrow">Oltre il codice</span>
+          <h2>Ciao, sono Davide.</h2>
+          <p>Mi piace costruire cose e sperimentare con le nuove tecnologie. Sono sempre curioso di capire come possano far funzionare meglio le cose.</p>
+          <p>Questi progetti personali sono il mio modo di imparare: prendere un’idea, metterla alla prova, correggere quello che non funziona e continuare a migliorarla.</p>
+        </div>
+        <aside class="about-card">
+          <span class="mini-label">Cosa trovi qui</span>
+          <h3>Progetti concreti, documentati e in evoluzione.</h3>
+          <p>Web app, dati aperti, visualizzazioni e attenzione alla privacy. Ogni progetto ha la sua pagina e il suo repository, per vedere cosa fa e come è stato costruito.</p>
+          <a class="github-link" href="https://github.com/making-lemonade" target="_blank" rel="noopener noreferrer">github.com/making-lemonade ↗</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section support" id="supporta">
+      <div class="container support-inner">
+        <div>
+          <span class="eyebrow">Supporta i progetti</span>
+          <h2>Un piccolo aiuto fa strada.</h2>
+          <p>Se uno di questi strumenti ti è utile, puoi sostenere il lavoro che c’è dietro. Non è necessario: anche provarli, condividerli o lasciare un feedback significa molto.</p>
+        </div>
+        <div class="support-actions">
+          <a class="button paypal" href="https://www.paypal.me/dvaidae" target="_blank" rel="noopener noreferrer">Dona con PayPal ↗</a>
+          <a class="button coffee" href="https://www.buymeacoffee.com/dvaidae" target="_blank" rel="noopener noreferrer">Buy me a coffee ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-left">© 2026 Davide · making-lemonade<br>Dettagli tecnici e limiti dei progetti: consulta le rispettive documentazioni su GitHub.</div>
+      <nav class="footer-links" aria-label="Collegamenti finali">
+        <a href="#inizio">Torna su ↑</a>
+        <a href="https://github.com/making-lemonade" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a class="paypal-footer" href="https://www.paypal.me/dvaidae" target="_blank" rel="noopener noreferrer">Supporta con PayPal ↗</a>
+      </nav>
+    </div>
+  </footer>
+  <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="dvaidae" data-color="#FFDD00" data-emoji="" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
+</body>
+</html>
