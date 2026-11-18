@@ -116,6 +116,12 @@
     .footer-links .paypal-footer{color:var(--accent);font-weight:800}
     @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero{padding:72px 0}.hero-aside{min-height:230px}.hero-orbit{margin-top:24px}.project{grid-template-columns:1fr}.project-copy{padding:30px 30px 20px}.project-visual{min-height:270px}.about-layout{gap:25px}.support-inner{align-items:flex-start;flex-direction:column}.support-actions{justify-content:flex-start}}
     @media(max-width:620px){.container{width:min(100% - 32px,1120px)}.header-inner{min-height:73px}.brand-sub{font-size:10px}.nav{gap:10px}.nav .nav-internal{display:none}.donate-small{padding:9px 12px;font-size:12px}.hero{padding:59px 0 66px}.hero-grid{gap:30px}.hero-aside{min-height:230px}.lede{font-size:16px}.section{padding:54px 0}.section-header{display:block}.section-note{margin-top:14px}.project h3{font-size:30px}.project-visual{min-height:255px}.about-layout{grid-template-columns:1fr}.support-actions{min-width:0}.footer-inner{flex-direction:column;align-items:flex-start;gap:17px}}
+    .language-switch{display:inline-flex;align-items:center;gap:3px;padding:4px;border:1px solid rgba(205,230,225,.24);border-radius:999px;background:rgba(255,255,255,.04);flex-shrink:0}
+    .language-button{border:0;border-radius:999px;min-width:39px;height:30px;padding:0 9px;background:transparent;color:#bdcad4;font:750 12px/1 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;cursor:pointer;transition:background .16s,color .16s}
+    .language-button:hover{color:white}
+    .language-button.is-active{background:var(--accent);color:#10231f;cursor:default}
+    .language-button:focus-visible{outline:2px solid white;outline-offset:2px}
+    @media(max-width:620px){.header-inner{flex-wrap:wrap;padding-block:11px;gap:12px}.brand{flex:1}.nav{width:100%;justify-content:space-between}.nav .language-switch{order:0}.nav .donate-small{order:1}.language-button{min-width:45px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
   </style>
 </head>
@@ -127,6 +133,7 @@
         <span><span class="brand-name">Davide</span><span class="brand-sub">making-lemonade / portfolio</span></span>
       </a>
       <nav class="nav" aria-label="Navigazione principale">
+        <div class="language-switch" role="group" aria-label="Seleziona la lingua"><button type="button" class="language-button is-active" data-lang="it" aria-pressed="true" lang="it" title="Italiano">IT</button><button type="button" class="language-button" data-lang="en" aria-pressed="false" lang="en" title="English">EN</button></div>
         <a class="nav-internal" href="#progetti">Progetti</a>
         <a class="nav-internal" href="#chi-sono">Chi sono</a>
         <a class="donate-small" href="https://www.paypal.me/dvaidae" target="_blank" rel="noopener noreferrer" aria-label="Supporta i progetti con PayPal (apre una nuova scheda)">&#9829; &nbsp;Supporta su PayPal ↗</a>
@@ -260,6 +267,129 @@
       </nav>
     </div>
   </footer>
+  <script>
+  (() => {
+    "use strict";
+    const translations = {
+  "Progetti": "Projects",
+  "Chi sono": "About me",
+  "♥ Supporta su PayPal ↗": "♥ Support on PayPal ↗",
+  "Portfolio personale": "Personal portfolio",
+  "Mi piace capire.": "I like to understand.",
+  "Poi costruire.": "Then build.",
+  "Sperimento con il software, i dati e le nuove tecnologie. Parto da un problema concreto e provo a trasformarlo in qualcosa che si possa davvero usare.": "I experiment with software, data and new technologies. I start with a real problem and try to turn it into something people can actually use.",
+  "Esplora i progetti": "Explore projects",
+  "Il mio GitHub": "My GitHub",
+  "Curiosità, test, miglioramenti": "Curiosity, testing, improvements",
+  "Idee piccole.": "Small ideas.",
+  "Problemi veri.": "Real problems.",
+  "Due progetti indipendenti, nati dalla voglia di imparare facendo e di rendere più accessibili strumenti e informazioni.": "Two independent projects, born from a desire to learn by doing and make tools and information more accessible.",
+  "Progetti in evidenza": "Featured projects",
+  "Due applicazioni diverse, unite dalla stessa idea: la tecnologia è interessante quando diventa utile.": "Two different applications, united by one idea: technology is interesting when it becomes useful.",
+  "Un archivio personale per referti medici e risultati di laboratorio. Puoi conservare i PDF, organizzare i documenti per persona e seguire i valori nel tempo. È una PWA installabile, progettata per tenere i dati sul tuo dispositivo in un archivio cifrato.": "A personal archive for medical reports and laboratory results. Store PDFs, organize documents for different people and track values over time. It's an installable PWA designed to keep data on your device in an encrypted archive.",
+  "Apri Riferto ↗": "Open Riferto ↗",
+  "Repository GitHub ↗": "GitHub repository ↗",
+  "Archivio personale, non dispositivo medico.": "Personal archive, not a medical device.",
+  "Riferto / Archivio": "Riferto / Archive",
+  "Locale e privato": "Local and private",
+  "Referti": "Reports",
+  "Documenti e allegati PDF": "Documents and PDF attachments",
+  "Valori nel tempo": "Values over time",
+  "Storico e tendenze": "History and trends",
+  "02 · Open data & analisi": "02 · Open data & analysis",
+  "Una dashboard per esplorare i dati pubblici sulla qualità dell’acqua nei comuni serviti da Gruppo CAP. Filtri per comune, periodo e parametro, grafici, mappe e analisi statistiche: dai file originali a una lettura più chiara e verificabile dei dati.": "A dashboard for exploring public water-quality data from municipalities served by Gruppo CAP. Filter by municipality, period and parameter, with charts, maps and statistical analysis: from original files to a clearer, verifiable picture of the data.",
+  "Mappe": "Maps",
+  "ML esplorativo": "Exploratory ML",
+  "Apri la dashboard ↗": "Open the dashboard ↗",
+  "Progetto indipendente. Non certifica la potabilità e non è affiliato a Gruppo CAP.": "Independent project. It does not certify water safety and is not affiliated with Gruppo CAP.",
+  "Acqua / Dati aperti": "Water / Open data",
+  "Esplora": "Explore",
+  "Parametro selezionato": "Selected parameter",
+  "Serie storica": "Time series",
+  "Serie illustrativa": "Illustrative data",
+  "Comune · Periodo · Parametro": "Municipality · Period · Parameter",
+  "Dati e provenienza": "Data and provenance",
+  "Fonti e trasformazioni consultabili": "Traceable sources and transformations",
+  "Oltre il codice": "Beyond code",
+  "Ciao, sono Davide.": "Hi, I'm Davide.",
+  "Mi piace costruire cose e sperimentare con le nuove tecnologie. Sono sempre curioso di capire come possano far funzionare meglio le cose.": "I enjoy building things and experimenting with new technologies. I'm always curious about how technology can make things work better.",
+  "Questi progetti personali sono il mio modo di imparare: prendere un’idea, metterla alla prova, correggere quello che non funziona e continuare a migliorarla.": "These personal projects are how I learn: take an idea, put it to the test, fix what doesn't work and keep improving it.",
+  "Cosa trovi qui": "What you'll find here",
+  "Progetti concreti, documentati e in evoluzione.": "Practical projects, documented and evolving.",
+  "Web app, dati aperti, visualizzazioni e attenzione alla privacy. Ogni progetto ha la sua pagina e il suo repository, per vedere cosa fa e come è stato costruito.": "Web apps, open data, visualizations and a focus on privacy. Each project has its own page and repository, so you can see what it does and how it was built.",
+  "Supporta i progetti": "Support the projects",
+  "Un piccolo aiuto fa strada.": "A little support goes a long way.",
+  "Se uno di questi strumenti ti è utile, puoi sostenere il lavoro che c’è dietro. Non è necessario: anche provarli, condividerli o lasciare un feedback significa molto.": "If one of these tools is useful to you, you can support the work behind it. There's no obligation: trying them, sharing them or leaving feedback means a lot too.",
+  "Dona con PayPal ↗": "Donate with PayPal ↗",
+  "Dettagli tecnici e limiti dei progetti: consulta le rispettive documentazioni su GitHub.": "For technical details and limitations, see each project's documentation on GitHub.",
+  "Torna su ↑": "Back to top ↑",
+  "Supporta con PayPal ↗": "Support via PayPal ↗"
+};
+    const attributeTranslations = {
+  "Davide, torna all'inizio": "Davide, back to top",
+  "Navigazione principale": "Main navigation",
+  "Supporta i progetti con PayPal (apre una nuova scheda)": "Support the projects with PayPal (opens in a new tab)",
+  "Il mio approccio": "My approach",
+  "Tecnologie e caratteristiche": "Technologies and features",
+  "Illustrazione di un archivio digitale di referti": "Illustration of a digital archive of medical reports",
+  "Illustrazione di una dashboard con grafico temporale di dati sull'acqua": "Illustration of a dashboard with a water-data time-series chart",
+  "Collegamenti finali": "Footer links",
+  "Seleziona la lingua": "Select language",
+  "Il portfolio personale di Davide: Riferto e Acqua Analisi, due progetti indipendenti tra web app, privacy, open data e visualizzazione.": "Davide's personal portfolio: Riferto and Acqua Analisi, two independent projects spanning web apps, privacy, open data and visualization.",
+  "Mi piace costruire cose, sperimentare e capire come la tecnologia possa far funzionare meglio le cose.": "I enjoy building things, experimenting and finding out how technology can make things work better.",
+  "Davide — Progetti personali": "Davide — Personal projects"
+};
+    const textEntries = [];
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const tag = node.parentElement?.tagName;
+        return tag === "SCRIPT" || tag === "STYLE" || tag === "SVG" ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      const original = node.nodeValue;
+      const key = original.replace(/\s+/g, " ").trim();
+      if (!Object.prototype.hasOwnProperty.call(translations, key)) continue;
+      const leading = original.match(/^\s*/)[0];
+      const trailing = original.match(/\s*$/)[0];
+      textEntries.push({node, it: original, en: leading + translations[key] + trailing});
+    }
+    const attributeEntries = [];
+    document.querySelectorAll("[aria-label], meta[content]").forEach(element => {
+      for (const name of ["aria-label", "content"]) {
+        const value = element.getAttribute(name);
+        if (value && Object.prototype.hasOwnProperty.call(attributeTranslations, value)) {
+          attributeEntries.push({element, name, it: value, en: attributeTranslations[value]});
+        }
+      }
+    });
+    // Meta tags live in <head>, outside the body selector above.
+    document.querySelectorAll("head meta[content]").forEach(element => {
+      const value = element.getAttribute("content");
+      if (value && Object.prototype.hasOwnProperty.call(attributeTranslations, value)) {
+        attributeEntries.push({element, name: "content", it: value, en: attributeTranslations[value]});
+      }
+    });
+    const titleIt = document.title;
+    const titleEn = attributeTranslations[titleIt] || titleIt;
+    const controls = Array.from(document.querySelectorAll(".language-button"));
+    function setLanguage(lang) {
+      const en = lang === "en";
+      document.documentElement.lang = en ? "en" : "it";
+      document.title = en ? titleEn : titleIt;
+      textEntries.forEach(entry => { entry.node.nodeValue = en ? entry.en : entry.it; });
+      attributeEntries.forEach(entry => { entry.element.setAttribute(entry.name, en ? entry.en : entry.it); });
+      controls.forEach(button => {
+        const active = button.dataset.lang === lang;
+        button.classList.toggle("is-active", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
+    }
+    controls.forEach(button => button.addEventListener("click", () => setLanguage(button.dataset.lang)));
+    setLanguage("it");
+  })();
+  </script>
   <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="dvaidae" data-color="#FFDD00" data-emoji="" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
 </body>
 </html>
