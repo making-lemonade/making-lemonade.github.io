@@ -15,7 +15,6 @@ I enjoy building things and experimenting with new technologies. Always curious 
 
 If these projects are useful to you, you can support their continued development:
 
-- [PayPal](https://www.paypal.me/dvaidae)
 - [Buy Me a Coffee](https://www.buymeacoffee.com/dvaidae)
 
 ## Publishing
